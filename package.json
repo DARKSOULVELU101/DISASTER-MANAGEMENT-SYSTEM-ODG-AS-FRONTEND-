@@ -1,0 +1,8 @@
+{
+  "name": "india-disaster-powerbi-frontend",
+  "version": "1.0.0",
+  "description": "Power BI style frontend dashboard for India Disaster Management data",
+  "scripts": {
+    "start": "python -m http.server 5500"
+  }
+}
