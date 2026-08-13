@@ -115,14 +115,15 @@ export function AppBarChart<T extends Row>({
   height?: number;
   color?: string;
 }) {
+  const axisData = data.map((d) => ({ ...d, __label: labels(d) }));
   const longest = Math.max(...data.map((d) => String(labels(d)).length), 6);
   const tickCount = data.length > 14 ? Math.ceil(data.length / 12) : undefined;
   return (
     <ChartShell height={height}>
-      <BarChart data={data} margin={{ top: 18, right: 8, left: -12, bottom: 8 }} barCategoryGap="28%">
+      <BarChart data={axisData} margin={{ top: 18, right: 8, left: -12, bottom: 8 }} barCategoryGap="28%">
         <CartesianGrid stroke={GRID} vertical={false} />
         <XAxis
-          dataKey={labels}
+          dataKey="__label"
           tick={{ fill: AXIS, fontSize: 11 }}
           axisLine={false}
           tickLine={false}
@@ -170,12 +171,13 @@ export function AppLineChart<T extends Row>({
   unit?: string;
   height?: number;
 }) {
+  const axisData = data.map((d) => ({ ...d, __label: labels(d) }));
   return (
     <ChartShell height={height}>
-      <LineChart data={data} margin={{ top: 18, right: 16, left: -12, bottom: 8 }}>
+      <LineChart data={axisData} margin={{ top: 18, right: 16, left: -12, bottom: 8 }}>
         <CartesianGrid stroke={GRID} vertical={false} />
         <XAxis
-          dataKey={labels}
+          dataKey="__label"
           tick={{ fill: AXIS, fontSize: 11 }}
           axisLine={false}
           tickLine={false}

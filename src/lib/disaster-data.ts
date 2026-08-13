@@ -36,6 +36,17 @@ export interface YearRow {
   southEvents: number;
 }
 
+export interface TypeRow {
+  type: string;
+  records: number;
+  events: number;
+  deaths: number;
+  injured: number;
+  affected: number;
+  damage: number;
+  avgDamage: number;
+}
+
 export interface Totals {
   events: number;
   deaths: number;
@@ -56,8 +67,8 @@ export interface DashboardData {
   meta: { project: string; generatedAt: string; sourceFile: string };
   totals: { india: Totals; southIndia: Totals };
   records: DisasterRecord[];
-  states: string[];
-  types: string[];
+  states: StateRow[];
+  types: TypeRow[];
   years: YearRow[];
   southRecords: DisasterRecord[];
   southByType: unknown[];

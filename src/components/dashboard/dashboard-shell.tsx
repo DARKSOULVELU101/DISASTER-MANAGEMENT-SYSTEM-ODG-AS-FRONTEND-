@@ -149,8 +149,8 @@ export function DashboardShell() {
     <div className="flex flex-wrap items-center gap-2.5">
       {(
         [
-          ["State", "state", data?.states ?? []],
-          ["Disaster", "type", data?.types ?? []],
+          ["State", "state", data?.states.map((s) => s.state) ?? []],
+          ["Disaster", "type", data?.types.map((t) => t.type) ?? []],
           ["Year", "year", data?.years.map((y) => String(y.year)) ?? []],
         ] as const
       ).map(([label, key, items]) => (
