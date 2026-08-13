@@ -98,8 +98,8 @@ export function GBadge({ size = 34, className }: { size?: number; className?: st
     >
       <defs>
         <linearGradient id="genvouch-g-badge" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#3a3529" />
-          <stop offset="100%" stopColor="#23201a" />
+          <stop offset="0%" stopColor="#16304f" />
+          <stop offset="100%" stopColor="#0a1a2f" />
         </linearGradient>
       </defs>
       <rect x="2" y="2" width="44" height="44" rx="9" fill={`url(#genvouch-g-badge)`} />

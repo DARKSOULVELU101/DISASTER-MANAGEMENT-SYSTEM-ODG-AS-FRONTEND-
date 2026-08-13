@@ -164,7 +164,7 @@ export function StateView({ records }: { records: DisasterRecord[] }) {
             dataKey="events"
             labels={(d) => String(d.name)}
             height={320}
-            color="#4A4537"
+            color="#16304F"
           />
         </Card>
       </div>
@@ -218,7 +218,7 @@ export function TypesView({ records }: { records: DisasterRecord[] }) {
             dataKey="deaths"
             labels={(d) => String(d.name)}
             height={280}
-            color="#8A6A23"
+            color="#1E3E63"
           />
         </Card>
       </div>
@@ -356,7 +356,7 @@ export function ImpactView({ records }: { records: DisasterRecord[] }) {
             dataKey="affected"
             labels={(d) => String(d.name)}
             height={320}
-            color="#4A4537"
+            color="#16304F"
           />
         </Card>
         <Card>
@@ -366,7 +366,7 @@ export function ImpactView({ records }: { records: DisasterRecord[] }) {
             dataKey="deaths"
             labels={(d) => String(d.name)}
             height={320}
-            color="#8A6A23"
+            color="#1E3E63"
           />
         </Card>
       </div>
@@ -412,7 +412,7 @@ export function DamageView({ records }: { records: DisasterRecord[] }) {
             dataKey="homes"
             labels={(d) => String(d.name)}
             height={300}
-            color="#8A6A23"
+            color="#1E3E63"
           />
         </Card>
         <Card>

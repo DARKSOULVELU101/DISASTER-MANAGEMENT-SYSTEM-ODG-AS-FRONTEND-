@@ -20,15 +20,15 @@ import type { ReactNode } from "react";
 
 export const PALETTE = [
   "#C6A24B",
+  "#16304F",
   "#8A6A23",
-  "#B18A33",
-  "#5E4518",
   "#D9BE77",
-  "#4A4537",
+  "#0A1A2F",
+  "#4E6E96",
   "#A67C2E",
-  "#E2CF96",
-  "#6F6656",
-  "#96702A",
+  "#1E3E63",
+  "#B18A33",
+  "#5C6B7E",
 ];
 
 const AXIS = "#9C917A";
@@ -201,7 +201,7 @@ export function AppLineChart<T extends Row>({
           stroke="#B18A33"
           strokeWidth={2.6}
           dot={{ r: 3.4, fill: "#FAF6EA", strokeWidth: 2, stroke: "#B18A33" }}
-          activeDot={{ r: 5.5, fill: "#5E4518", strokeWidth: 0 }}
+          activeDot={{ r: 5.5, fill: "#0A1A2F", strokeWidth: 0 }}
           animationDuration={1000}
           animationEasing="ease-out"
         />

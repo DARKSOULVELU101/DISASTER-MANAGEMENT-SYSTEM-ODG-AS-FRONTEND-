@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, type TargetAndTransition, type Transition } from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ChartLineUp, ShieldCheck, Sparkle, SquaresFour, Timer } from "@phosphor-icons/react";
 import { GBadge } from "@/components/brand/g-logo";
 import { GenvouchLoader } from "@/components/loader";
@@ -383,6 +384,68 @@ export function LandingPage() {
                   </span>
                   <ArrowRight size={17} className="text-faint transition-all group-hover:translate-x-1 group-hover:text-brand-600" />
                 </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Console stills */}
+        <section className="radial-warm border-b border-line">
+          <div className="mx-auto max-w-[1280px] px-5 py-20 sm:px-8 sm:py-28">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 1.1, ease: [0.65, 0, 0.35, 1] }}
+              className="mb-12 max-w-[680px]"
+            >
+              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-brand-700">
+                The Console in Still
+              </p>
+              <h2 className="mt-4 font-display text-[2.4rem] font-semibold leading-[1.04] tracking-[-0.015em] text-ink sm:text-[3rem]">
+                Your data, <span className="text-gradient-gold">framed</span>
+              </h2>
+              <p className="mt-5 max-w-[52ch] text-[15px] leading-relaxed text-muted">
+                The live console, captured in the field — the same views you can
+                open for yourself on the next page.
+              </p>
+            </motion.div>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                "/photography/hero-landscape.png",
+                "/photography/hero-portrait.png",
+                "/photography/editorial-band.png",
+                "/photography/band-secondary.png",
+              ].map((src, i) => (
+                <motion.figure
+                  key={src}
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.25 }}
+                  transition={{ duration: 1.05, delay: i * 0.1, ease: [0.65, 0, 0.35, 1] }}
+                  className="group"
+                >
+                  <div className="relative overflow-hidden rounded-md border border-line bg-charcoal shadow-[0_18px_44px_-20px_rgba(10,26,47,0.5)]">
+                    <Image
+                      src={src}
+                      alt={`Console still — ${String(i + 1).padStart(2, "0")}`}
+                      width={640}
+                      height={480}
+                      loading="lazy"
+                      className="aspect-[4/3] w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.04]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 box-shadow-[inset_0_0_60px_rgba(6,13,23,0.35)]" />
+                    <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-brand-800 via-brand-400 to-accent" />
+                  </div>
+                  <figcaption className="mt-3 flex items-baseline justify-between gap-2">
+                    <span className="tabular serif-num text-[12px] font-semibold text-brand-700">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.24em] text-faint">
+                      Console Still
+                    </span>
+                  </figcaption>
+                </motion.figure>
               ))}
             </div>
           </div>

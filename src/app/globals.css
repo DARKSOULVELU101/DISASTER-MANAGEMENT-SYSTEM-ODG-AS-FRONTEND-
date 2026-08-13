@@ -18,25 +18,25 @@
   --color-brand-900: #463310;
   --color-brand-950: #2e2110;
 
-  /* Warm ivory paper + charcoal chrome */
+  /* Soft ivory paper + deep midnight navy chrome */
   --color-ivory: #f3ecd9;
   --color-ivory-light: #faf6ea;
   --color-paper: #f6f0df;
-  --color-charcoal: #23201a;
-  --color-charcoal-800: #2b2820;
-  --color-charcoal-700: #38342a;
-  --color-charcoal-600: #4a4537;
+  --color-charcoal: #0a1a2f;
+  --color-charcoal-800: #10233d;
+  --color-charcoal-700: #16304f;
+  --color-charcoal-600: #1e3e63;
 
-  --color-primary: #5e4518;
+  --color-primary: #10233d;
   --color-secondary: #c6a24b;
   --color-accent: #d9be77;
 
-  --color-surface: #f6f0df;
-  --color-mist: #ece2c8;
-  --color-ink: #2b2720;
-  --color-muted: #6f6656;
-  --color-faint: #9c917a;
-  --color-line: #e2d7bc;
+  --color-surface: #f4eede;
+  --color-mist: #e7dfc8;
+  --color-ink: #101c2b;
+  --color-muted: #5c6b7e;
+  --color-faint: #8a97a8;
+  --color-line: #e3d9c2;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
@@ -45,7 +45,7 @@
 
 :root {
   --background: #f3ecd9;
-  --foreground: #2b2720;
+  --foreground: #101c2b;
   color-scheme: light;
 }
 
@@ -80,8 +80,8 @@ body {
   border: 1px solid var(--color-line);
   border-radius: 4px;
   box-shadow:
-    0 1px 2px rgba(43, 39, 32, 0.04),
-    0 14px 34px -18px rgba(43, 39, 32, 0.18);
+    0 1px 2px rgba(10, 26, 47, 0.05),
+    0 14px 34px -18px rgba(10, 26, 47, 0.22);
 }
 
 .card-flat {
@@ -113,11 +113,11 @@ body {
   color: transparent;
 }
 
-/* Dark charcoal plate for chrome regions */
+/* Deep midnight navy plate for chrome regions */
 .plate-charcoal {
   background:
-    radial-gradient(120% 120% at 0% 0%, rgba(217, 190, 119, 0.06), transparent 42%),
-    linear-gradient(180deg, #2b2820, #201d17);
+    radial-gradient(120% 120% at 0% 0%, rgba(217, 190, 119, 0.08), transparent 42%),
+    linear-gradient(180deg, #16304f, #0a1a2f);
   color: #faf6ea;
 }
 
@@ -153,43 +153,43 @@ body {
   background-size: 200px 200px;
 }
 
-/* Warm studio light across the page (replaces radial-blue) */
+/* Warm studio light + faint navy coolness across the page */
 .radial-warm {
   background:
     radial-gradient(900px 520px at 14% -6%, rgba(217, 190, 119, 0.3), transparent 60%),
     radial-gradient(760px 500px at 94% 2%, rgba(198, 162, 75, 0.18), transparent 58%),
-    radial-gradient(980px 640px at 50% 114%, rgba(90, 69, 24, 0.12), transparent 62%);
+    radial-gradient(980px 640px at 50% 114%, rgba(16, 35, 61, 0.1), transparent 62%);
 }
 
 /* Cinematic photography slot with an art-directed fallback.
-   Photos land at /photography/*.jpg; until they arrive the slot stays
+   Photos land at /photography/*.png; until they arrive the slot stays
    fully composed with warm light, gold streak, grain, and vignette. */
 .film-slot {
   position: relative;
   overflow: hidden;
-  background-color: #2b2820;
+  background-color: #10233d;
   background-image:
-    url("/photography/hero-landscape.jpg"),
+    url("/photography/hero-landscape.png"),
     radial-gradient(120% 90% at 20% 0%, rgba(217, 190, 119, 0.32), transparent 55%),
-    radial-gradient(120% 120% at 85% 100%, rgba(43, 39, 32, 0.9), transparent 60%),
-    linear-gradient(160deg, #4a4537 0%, #23201a 55%, #12100c 100%);
+    radial-gradient(120% 120% at 85% 100%, rgba(6, 13, 23, 0.9), transparent 60%),
+    linear-gradient(160deg, #1e3e63 0%, #0a1a2f 55%, #060d17 100%);
   background-size: cover, cover, cover, cover;
   background-position: center, center, center, center;
 }
 
 .film-slot-portrait {
   background-image:
-    url("/photography/hero-portrait.jpg"),
+    url("/photography/hero-portrait.png"),
     radial-gradient(120% 90% at 30% 0%, rgba(217, 190, 119, 0.3), transparent 55%),
-    radial-gradient(120% 120% at 80% 100%, rgba(43, 39, 32, 0.9), transparent 60%),
-    linear-gradient(160deg, #4a4537 0%, #23201a 55%, #12100c 100%);
+    radial-gradient(120% 120% at 80% 100%, rgba(6, 13, 23, 0.9), transparent 60%),
+    linear-gradient(160deg, #1e3e63 0%, #0a1a2f 55%, #060d17 100%);
 }
 
 .film-slot-band {
   background-image:
-    url("/photography/editorial-band.jpg"),
+    url("/photography/editorial-band.png"),
     radial-gradient(120% 90% at 20% 0%, rgba(217, 190, 119, 0.28), transparent 55%),
-    linear-gradient(160deg, #38342a 0%, #201d17 70%, #12100c 100%);
+    linear-gradient(160deg, #16304f 0%, #0a1a2f 70%, #060d17 100%);
 }
 
 .film-light {
@@ -211,7 +211,7 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 120px rgba(18, 16, 12, 0.55);
+  box-shadow: inset 0 0 120px rgba(6, 13, 23, 0.6);
 }
 
 /* ---------- Shimmer sweeps (slow, cinematic) ---------- */

@@ -1,28 +1,24 @@
 PHOTOGRAPHY SLOTS — "The Press Room"
 ====================================
 
-Drop your photos into this folder with these exact filenames. The UI is
-already fully styled with warm, art-directed fallbacks, so pages look
-complete until the files land. When a file appears, it simply replaces the
-fallback.
+The console screenshots from the user's 'web dash' folder are already wired
+into these slots. Replace any file with a new version (keep the same name)
+and it shows automatically.
 
-Required slots:
+Current slot files (PNG, copied from
+C:\Users\naren\OneDrive\Pictures\Screenshots\web dash):
 
-  hero-landscape.jpg   — Hero / dashboard hero band. Wide, cinematic, warm
-                         editorial tone. Suggested 1920x1080.
-  hero-portrait.jpg    — Landing hero portrait column. Suggested 3:4 or 4:5.
-  editorial-band.jpg   — Full-bleed editorial quote band. Wide 21:9-ish.
+  hero-landscape.png  — Landing "Console in Still" gallery (tile 01)
+  hero-portrait.png   — Landing hero column + gallery (tile 02)
+  editorial-band.png  — Editorial quote band + gallery (tile 03)
+  band-secondary.png  — Gallery tile 04
 
-Recommended styles (match the visual world):
-  - Warm ivory / golden-hour light, charcoal shadows
-  - Cinematic film look: soft highlights, gentle grain, muted color
-  - Subjects: landscape, relief work, monsoon/cyclone season, aftermath
-  - Portrait or landscape orientation as listed above
-  - Landscape: 2–5 MB JPEG/WebP is plenty; keep under ~500 KB ideally
+How slots work:
+  - Each slot is a CSS background with layered fallbacks (gold light,
+    navy gradient, vignette) so nothing ever looks broken.
+  - .film-slot* backgrounds are defined in src/app/globals.css.
+  - The gallery renders the files as <img> elements in landing-page.tsx.
 
-Notes:
-  - Keep filenames EXACTLY as listed (case-sensitive on some hosts).
-  - .jpg is referenced; .webp also works if you edit the URL in
-    src/app/globals.css (.film-slot rules) and landing-page.tsx.
-  - The slots use CSS fallback layers (radial light, gradient, vignette) so
-    a missing photo never looks broken.
+Recommended if you replace them:
+  - Keep the same .png filenames above.
+  - Landscape, warm/neutral light, crisp UI — 1–2 MB is plenty.
