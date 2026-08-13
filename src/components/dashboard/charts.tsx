@@ -19,20 +19,20 @@ import {
 import type { ReactNode } from "react";
 
 export const PALETTE = [
-  "#1565FF",
-  "#2D9CFF",
-  "#002A78",
-  "#5B8DEF",
-  "#7FC2FF",
-  "#0B47E8",
-  "#38B0C8",
-  "#6C5CE7",
-  "#0A6C6A",
-  "#E07B39",
+  "#C6A24B",
+  "#8A6A23",
+  "#B18A33",
+  "#5E4518",
+  "#D9BE77",
+  "#4A4537",
+  "#A67C2E",
+  "#E2CF96",
+  "#6F6656",
+  "#96702A",
 ];
 
-const AXIS = "#94A3B8";
-const GRID = "rgba(15,23,42,0.07)";
+const AXIS = "#9C917A";
+const GRID = "rgba(43,39,32,0.08)";
 
 interface TooltipRow {
   name?: string;
@@ -53,7 +53,7 @@ function BrandTooltip({
 }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="rounded-xl border border-line bg-white/95 px-3.5 py-2.5 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.28)] backdrop-blur">
+    <div className="rounded-md border border-line bg-ivory-light/95 px-3.5 py-2.5 shadow-[0_10px_30px_-12px_rgba(43,39,32,0.35)] backdrop-blur">
       {label !== undefined && (
         <div className="mb-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">
           {label}
@@ -138,7 +138,7 @@ export function AppBarChart<T extends Row>({
           tickLine={false}
           tickFormatter={(v: number) => (v >= 1e5 ? `${(v / 1e5).toFixed(0)}L` : v >= 1e3 ? `${(v / 1e3).toFixed(0)}K` : String(v))}
         />
-        <Tooltip content={<BrandTooltip unit={unit} />} cursor={{ fill: "rgba(21,101,255,0.06)" }} />
+        <Tooltip content={<BrandTooltip unit={unit} />} cursor={{ fill: "rgba(198,162,75,0.12)" }} />
         <defs>
           <linearGradient id={`bar-grad-${dataKey}`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor={color} stopOpacity={1} />
@@ -148,10 +148,10 @@ export function AppBarChart<T extends Row>({
         <Bar
           dataKey={dataKey}
           fill={`url(#bar-grad-${dataKey})`}
-          radius={[7, 7, 3, 3]}
+          radius={[2, 2, 2, 2]}
           maxBarSize={44}
-          animationDuration={900}
-          animationEasing="ease-out"
+          animationDuration={1400}
+          animationEasing="cubic-bezier(0.65,0,0.35,1)"
         />
       </BarChart>
     </ChartShell>
@@ -188,20 +188,20 @@ export function AppLineChart<T extends Row>({
           tickLine={false}
           tickFormatter={(v: number) => (v >= 1e5 ? `${(v / 1e5).toFixed(0)}L` : v >= 1e3 ? `${(v / 1e3).toFixed(0)}K` : String(v))}
         />
-        <Tooltip content={<BrandTooltip unit={unit} />} cursor={{ stroke: "rgba(21,101,255,0.25)", strokeDasharray: "4 4" }} />
+        <Tooltip content={<BrandTooltip unit={unit} />} cursor={{ stroke: "rgba(198,162,75,0.4)", strokeDasharray: "4 4" }} />
         <defs>
           <linearGradient id={`line-grad-${dataKey}`} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#2D9CFF" stopOpacity={0.32} />
-            <stop offset="100%" stopColor="#2D9CFF" stopOpacity={0} />
+            <stop offset="0%" stopColor="#C6A24B" stopOpacity={0.3} />
+            <stop offset="100%" stopColor="#C6A24B" stopOpacity={0} />
           </linearGradient>
         </defs>
         <Line
           type="monotone"
           dataKey={dataKey}
-          stroke="#1565FF"
+          stroke="#B18A33"
           strokeWidth={2.6}
-          dot={{ r: 3.4, fill: "#FFFFFF", strokeWidth: 2, stroke: "#1565FF" }}
-          activeDot={{ r: 5.5, fill: "#002A78", strokeWidth: 0 }}
+          dot={{ r: 3.4, fill: "#FAF6EA", strokeWidth: 2, stroke: "#B18A33" }}
+          activeDot={{ r: 5.5, fill: "#5E4518", strokeWidth: 0 }}
           animationDuration={1000}
           animationEasing="ease-out"
         />
@@ -235,8 +235,8 @@ export function AppDoughnutChart<T extends Row>({
           paddingAngle={2.5}
           cornerRadius={5}
           stroke="none"
-          animationDuration={900}
-          animationEasing="ease-out"
+          animationDuration={1400}
+          animationEasing="cubic-bezier(0.65,0,0.35,1)"
         >
           {data.map((_, i) => (
             <Cell key={i} fill={PALETTE[i % PALETTE.length]} />
@@ -245,8 +245,8 @@ export function AppDoughnutChart<T extends Row>({
       </PieChart>
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="text-center">
-          <div className="tabular text-xl font-bold text-ink">{total.toLocaleString("en-IN")}</div>
-          <div className="text-[10px] uppercase tracking-[0.18em] text-muted">Total</div>
+          <div className="serif-num text-[1.35rem] font-semibold text-ink">{total.toLocaleString("en-IN")}</div>
+          <div className="mt-1 text-[9.5px] uppercase tracking-[0.22em] text-muted">Total</div>
         </div>
       </div>
     </ChartShell>

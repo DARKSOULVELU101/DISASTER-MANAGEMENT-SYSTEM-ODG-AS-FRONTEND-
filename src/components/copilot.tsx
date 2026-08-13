@@ -93,7 +93,7 @@ export function Copilot({
     <>
       <motion.button
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-5 right-5 z-50 flex items-center gap-2.5 rounded-full bg-gradient-to-r from-brand-800 via-brand-600 to-brand-500 px-4 py-3 text-white shadow-[0_12px_32px_-8px_rgba(0,42,120,0.5)] transition-transform hover:scale-[1.03] active:scale-[0.97]"
+        className="plate-charcoal fixed bottom-5 right-5 z-50 flex items-center gap-2.5 rounded-md border border-brand-400/40 px-4 py-3 text-ivory-light shadow-[0_14px_40px_-10px_rgba(43,39,32,0.6)] transition-transform hover:scale-[1.03] active:scale-[0.97]"
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.96 }}
         aria-label="Open Genvouch Copilot"
@@ -109,24 +109,24 @@ export function Copilot({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.96 }}
             transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-20 right-5 z-50 flex h-[540px] w-[min(92vw,390px)] flex-col overflow-hidden rounded-3xl border border-line bg-white shadow-[0_24px_80px_-20px_rgba(15,23,42,0.35)]"
+            className="plate-charcoal fixed bottom-20 right-5 z-50 flex h-[540px] w-[min(92vw,390px)] flex-col overflow-hidden rounded-md border border-charcoal-700 shadow-[0_24px_80px_-20px_rgba(18,16,12,0.7)]"
             role="dialog"
             aria-label="Genvouch Copilot chat"
           >
-            <div className="flex items-center gap-3 border-b border-line bg-surface/70 px-4 py-3.5">
+            <div className="flex items-center gap-3 border-b border-brand-400/20 bg-charcoal-800/70 px-4 py-3.5">
               <div className="relative">
                 <GBadge size={34} />
                 <motion.span
-                  className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-white bg-emerald-500"
+                  className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-charcoal-800 bg-brand-400 live-dot"
                   animate={{ scale: [1, 1.15, 1] }}
                   transition={{ duration: 1.8, repeat: Infinity }}
                 />
               </div>
               <div className="flex-1">
-                <div className="text-[13.5px] font-semibold text-ink">Genvouch Copilot</div>
-                <div className="text-[11px] text-muted">India Disaster Intelligence</div>
+                <div className="font-display text-[14px] font-semibold text-ivory-light">Genvouch Copilot</div>
+                <div className="text-[11px] text-ivory-light/60">India Disaster Intelligence</div>
               </div>
-              <Sparkle size={16} weight="duotone" className="text-brand-500" />
+              <Sparkle size={16} weight="duotone" className="text-brand-300" />
             </div>
 
             <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
@@ -139,14 +139,14 @@ export function Copilot({
                   className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[88%] whitespace-pre-wrap rounded-2xl px-3.5 py-2.5 text-[13px] leading-relaxed ${
+                    className={`max-w-[88%] whitespace-pre-wrap rounded-md px-3.5 py-2.5 text-[13px] leading-relaxed ${
                       m.role === "user"
-                        ? "rounded-br-md bg-gradient-to-r from-brand-800 to-brand-600 text-white"
-                        : "rounded-bl-md border border-line bg-surface text-ink"
+                        ? "rounded-br-sm bg-brand-400 text-charcoal"
+                        : "rounded-bl-sm border border-brand-400/25 bg-charcoal-800 text-ivory-light"
                     }`}
                   >
                     {m.thinking ? (
-                      <span className="flex items-center gap-1.5 text-muted">
+                      <span className="flex items-center gap-1.5 text-ivory-light/60">
                         Analyzing dashboard data
                         <span className="flex gap-1">
                           {[0, 1, 2].map((d) => (
@@ -167,14 +167,14 @@ export function Copilot({
               ))}
             </div>
 
-            <div className="border-t border-line px-3 pb-3 pt-2">
+            <div className="border-t border-brand-400/20 px-3 pb-3 pt-2">
               <div className="mb-2 flex flex-wrap gap-1.5">
                 {SUGGESTIONS.map((s) => (
                   <button
                     key={s}
                     onClick={() => ask(s)}
                     disabled={busy}
-                    className="rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11.5px] font-medium text-brand-800 transition-colors hover:bg-brand-100 disabled:opacity-50"
+                    className="rounded-full border border-brand-400/40 bg-charcoal-800 px-2.5 py-1 text-[11.5px] font-medium text-brand-300 transition-colors hover:bg-charcoal-700 disabled:opacity-50"
                   >
                     {s}
                   </button>
@@ -185,18 +185,18 @@ export function Copilot({
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about events, damage, trends..."
-                  className="min-w-0 flex-1 rounded-xl border border-line bg-surface px-3.5 py-2.5 text-[13px] text-ink outline-none transition-colors placeholder:text-faint focus:border-brand-400"
+                  className="min-w-0 flex-1 rounded-md border border-brand-400/30 bg-charcoal-800 px-3.5 py-2.5 text-[13px] text-ivory-light outline-none transition-colors placeholder:text-ivory-light/40 focus:border-brand-400"
                 />
                 <button
                   type="submit"
                   disabled={busy || !input.trim()}
-                  className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-gradient-to-r from-brand-800 to-brand-600 text-white transition-transform hover:scale-[1.04] active:scale-[0.96] disabled:opacity-40"
+                  className="flex h-10 w-10 flex-none items-center justify-center rounded-md bg-brand-400 text-charcoal transition-transform hover:scale-[1.04] active:scale-[0.96] disabled:opacity-40"
                   aria-label="Send"
                 >
                   <PaperPlaneTilt size={16} weight="bold" />
                 </button>
               </form>
-              <div className="mt-2 text-center text-[10.5px] text-faint">{note}</div>
+              <div className="mt-2 text-center text-[10.5px] text-ivory-light/40">{note}</div>
             </div>
           </motion.div>
         )}

@@ -41,7 +41,7 @@ function ViewKpis({ records }: { records: DisasterRecord[] }) {
 function ViewHeading({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <div className="mb-6 flex flex-col gap-1">
-      <h2 className="font-sans text-[1.45rem] font-bold tracking-tight text-ink sm:text-[1.7rem]">
+      <h2 className="font-display text-[1.5rem] font-semibold tracking-tight text-ink sm:text-[1.75rem]">
         <GradientShimmer>{title}</GradientShimmer>
       </h2>
       <p className="max-w-[65ch] text-[13.5px] text-muted">{subtitle}</p>
@@ -67,7 +67,7 @@ export function OverviewView({ data }: { data: DashboardData }) {
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-600">
                 Genvouch Intelligence Console
               </p>
-              <h3 className="mt-3 font-sans text-[1.5rem] font-bold leading-tight tracking-tight text-ink sm:text-[1.8rem]">
+              <h3 className="mt-3 font-display text-[1.5rem] font-semibold leading-tight tracking-tight text-ink sm:text-[1.8rem]">
                 India Disaster{" "}
                 <span className="shimmer-text">Intelligence</span> Dashboard
               </h3>
@@ -87,7 +87,7 @@ export function OverviewView({ data }: { data: DashboardData }) {
               ].map((pill) => (
                 <span
                   key={pill}
-                  className="rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-[11.5px] font-medium text-brand-800"
+                  className="rounded-sm border border-brand-400/40 bg-ivory-light px-3 py-1 text-[11.5px] font-medium text-brand-800"
                 >
                   {pill}
                 </span>
@@ -164,7 +164,7 @@ export function StateView({ records }: { records: DisasterRecord[] }) {
             dataKey="events"
             labels={(d) => String(d.name)}
             height={320}
-            color="#2D9CFF"
+            color="#4A4537"
           />
         </Card>
       </div>
@@ -218,7 +218,7 @@ export function TypesView({ records }: { records: DisasterRecord[] }) {
             dataKey="deaths"
             labels={(d) => String(d.name)}
             height={280}
-            color="#0B47E8"
+            color="#8A6A23"
           />
         </Card>
       </div>
@@ -316,15 +316,15 @@ export function SouthView({ records }: { records: DisasterRecord[] }) {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-2xl border border-line bg-surface p-4 transition-colors hover:border-brand-200 hover:bg-brand-50/60"
+                className="rounded-md border border-line bg-ivory-light p-4 transition-colors hover:border-brand-400/50 hover:bg-ivory-light"
               >
                 <div className="text-[14px] font-semibold text-ink">{s.name}</div>
                 <div className="mt-1 text-[12px] text-muted">
                   {fmt(s.events)} events • {crore(s.damage)}
                 </div>
-                <div className="mt-3 font-sans text-[1.5rem] font-bold leading-none text-brand-700">
-                  {compact(s.affected)}
-                </div>
+                  <div className="serif-num text-[1.4rem] font-semibold leading-none text-brand-700">
+                    {compact(s.affected)}
+                  </div>
                 <div className="mt-1 text-[11px] uppercase tracking-[0.14em] text-muted">
                   people affected
                 </div>
@@ -356,7 +356,7 @@ export function ImpactView({ records }: { records: DisasterRecord[] }) {
             dataKey="affected"
             labels={(d) => String(d.name)}
             height={320}
-            color="#2D9CFF"
+            color="#4A4537"
           />
         </Card>
         <Card>
@@ -366,7 +366,7 @@ export function ImpactView({ records }: { records: DisasterRecord[] }) {
             dataKey="deaths"
             labels={(d) => String(d.name)}
             height={320}
-            color="#0B47E8"
+            color="#8A6A23"
           />
         </Card>
       </div>
@@ -412,7 +412,7 @@ export function DamageView({ records }: { records: DisasterRecord[] }) {
             dataKey="homes"
             labels={(d) => String(d.name)}
             height={300}
-            color="#0B47E8"
+            color="#8A6A23"
           />
         </Card>
         <Card>
@@ -465,11 +465,11 @@ export function RiskView({ records }: { records: DisasterRecord[] }) {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-2xl border border-line bg-surface p-4 transition-colors hover:border-brand-200 hover:bg-brand-50/60"
+                className="rounded-md border border-line bg-ivory-light p-4 transition-colors hover:border-brand-400/50 hover:bg-ivory-light"
               >
                 <div className="flex items-baseline justify-between gap-2">
                   <div className="text-[14px] font-semibold text-ink">{s.name}</div>
-                  <div className="tabular font-sans text-[1.35rem] font-bold text-brand-700">
+                  <div className="serif-num text-[1.4rem] font-semibold text-brand-700">
                     {s.riskScore}
                   </div>
                 </div>

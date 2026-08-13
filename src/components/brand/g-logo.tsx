@@ -36,9 +36,9 @@ export function GMark({
     >
       <defs>
         <linearGradient id={GRADIENT_ID} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#002A78" />
-          <stop offset="52%" stopColor="#1565FF" />
-          <stop offset="100%" stopColor="#2D9CFF" />
+          <stop offset="0%" stopColor="#C6A24B" />
+          <stop offset="55%" stopColor="#D9BE77" />
+          <stop offset="100%" stopColor="#8A6A23" />
         </linearGradient>
         {glow && (
           <filter id="genvouch-g-glow" x="-40%" y="-40%" width="180%" height="180%">
@@ -65,14 +65,14 @@ export function GMark({
               pathLength={1}
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
-              transition={{ duration: 0.8, ease: "easeInOut", delay: 0.1 }}
+              transition={{ duration: 1.1, ease: "easeInOut", delay: 0.1 }}
             />
             <motion.path
               d={G_PATHS.bar}
               pathLength={1}
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
-              transition={{ duration: 0.35, ease: "easeInOut", delay: 0.75 }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 1.05 }}
             />
           </>
         ) : (
@@ -98,15 +98,14 @@ export function GBadge({ size = 34, className }: { size?: number; className?: st
     >
       <defs>
         <linearGradient id="genvouch-g-badge" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#002A78" />
-          <stop offset="55%" stopColor="#1565FF" />
-          <stop offset="100%" stopColor="#2D9CFF" />
+          <stop offset="0%" stopColor="#3a3529" />
+          <stop offset="100%" stopColor="#23201a" />
         </linearGradient>
       </defs>
-      <rect x="2" y="2" width="44" height="44" rx="13" fill={`url(#genvouch-g-badge)`} />
+      <rect x="2" y="2" width="44" height="44" rx="9" fill={`url(#genvouch-g-badge)`} />
       <g
         fill="none"
-        stroke="#ffffff"
+        stroke="#D9BE77"
         strokeWidth="4.4"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -131,10 +130,10 @@ export function GWordmark({
     <div className={`flex items-center gap-2.5 ${className ?? ""}`}>
       <GBadge size={size} />
       <span
-        className={`font-sans font-semibold tracking-tight ${
-          light ? "text-white" : "text-ink"
+        className={`font-display font-semibold tracking-tight ${
+          light ? "text-ivory-light" : "text-ink"
         }`}
-        style={{ fontSize: size * 0.52, lineHeight: 1 }}
+        style={{ fontSize: size * 0.6, lineHeight: 1 }}
       >
         GENVOUCH
       </span>

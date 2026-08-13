@@ -36,7 +36,7 @@ export function CardTitle({
 }) {
   return (
     <div className="mb-5 flex items-center justify-between gap-3">
-      <h3 className="font-sans text-[15px] font-semibold tracking-tight text-ink">{title}</h3>
+      <h3 className="font-display text-[16px] font-semibold tracking-tight text-ink">{title}</h3>
       <div className="flex items-center gap-2">
         {children}
         {tag && (
@@ -100,10 +100,10 @@ export function KpiCard({
     >
       <div
         className="pointer-events-none absolute -right-8 -top-10 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-        style={{ background: "radial-gradient(circle, rgba(45,156,255,0.28), transparent 70%)" }}
+        style={{ background: "radial-gradient(circle, rgba(217,190,119,0.3), transparent 70%)" }}
       />
-      <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">{label}</div>
-      <div className="mt-2.5 font-sans text-[1.7rem] font-bold leading-none tracking-tight text-ink sm:text-[2rem]">
+      <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-700">{label}</div>
+      <div className="serif-num mt-2.5 text-[1.9rem] font-semibold leading-none tracking-tight text-ink sm:text-[2.1rem]">
         <CountUp value={value} format={format} />
       </div>
       <div className="mt-2.5 text-[12.5px] text-muted">{sub}</div>
@@ -151,14 +151,14 @@ export function DataTable({
   cols: string[];
 }) {
   return (
-    <div className="scroll-thin -mx-1 max-h-[560px] overflow-auto rounded-xl border border-line">
+    <div className="scroll-thin -mx-1 max-h-[560px] overflow-auto rounded-md border border-line">
       <table className="w-full min-w-[720px] border-collapse text-left">
-        <thead className="sticky top-0 z-10 bg-surface">
+        <thead className="sticky top-0 z-10 bg-charcoal">
           <tr>
             {cols.map((c) => (
               <th
                 key={c}
-                className="border-b border-line px-4 py-3 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-muted"
+                className="border-b border-brand-400/25 px-4 py-3 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-brand-300"
               >
                 {c}
               </th>
